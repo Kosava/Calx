@@ -9,20 +9,21 @@ class Display(QWidget):
         super().__init__()
 
         layout = QVBoxLayout()
-        layout.setSpacing(5)
+        layout.setSpacing(8)
         layout.setContentsMargins(10, 20, 10, 10)
 
-        # History linija - prikazuje "3+3=6"
+        # History linija
         self.history = QLineEdit()
         self.history.setReadOnly(True)
         self.history.setAlignment(Qt.AlignmentFlag.AlignRight)
-        self.history.setFixedHeight(35)
-        self.history.setFont(QFont("Segoe UI", 14))
+        self.history.setFixedHeight(30)
+        self.history.setFont(QFont("Segoe UI", 13))  # ISPRAVLJENO
         self.history.setStyleSheet("""
             QLineEdit {
-                color: #666666;
+                color: #888888;
                 border: none;
-                padding-right: 10px;
+                padding-right: 5px;
+                background: transparent;
             }
         """)
 
@@ -30,13 +31,14 @@ class Display(QWidget):
         self.main = QLineEdit()
         self.main.setReadOnly(True)
         self.main.setAlignment(Qt.AlignmentFlag.AlignRight)
-        self.main.setFixedHeight(60)
-        self.main.setFont(QFont("Segoe UI", 36, QFont.Weight.Medium))
+        self.main.setFixedHeight(70)
+        self.main.setFont(QFont("Segoe UI", 48, QFont.Weight.Light))  # ISPRAVLJENO
         self.main.setText("0")
         self.main.setStyleSheet("""
             QLineEdit {
                 border: none;
-                padding-right: 10px;
+                padding-right: 5px;
+                background: transparent;
             }
         """)
 
